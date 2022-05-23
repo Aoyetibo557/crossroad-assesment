@@ -4,6 +4,7 @@ import CommitList from './CommitList';
 import "./styles.css";
 
 
+/* An interface that is used to define the shape of the data that is being fetched from the API. */
 export interface IState {
     author:{
         id: number, 
@@ -26,6 +27,7 @@ export interface IState {
 const CommitBoard = () => {
     const [commit, setCommit] = useState<IState[]>([])
 
+/* A hook that is used to fetch data from an API. */
     useEffect(() => {
         try{
            GET_ALL_COMMITS("aoyetibo557").then(data => {
