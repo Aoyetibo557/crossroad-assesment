@@ -1,5 +1,0 @@
-Project Req:
- primary requirements
- - return commit history
- - commit No, author, description, date 
- 

@@ -8,6 +8,7 @@
 .commitlist {
     width: 100%;
     background-color: #fff;
+
 }
 
 .commitlist__topdiv {
@@ -67,4 +68,66 @@ tr:nth-child(even) {
 .footer p{
     font-size: 14px;
     font-weight: 400;
+}
+
+@media only screen and (max-width: 768px) {
+
+
+    .commitlist__topdiv {
+        flex-direction: column;
+        justify-content: center;
+        margin: 0px;
+        width: 100%;
+        
+    }
+
+    .commitlist__topdiv div {
+        text-align: center;
+    }
+
+    .commitlist__topdiv h4 {
+        font-size: 1.7rem;
+    }
+    .commitlist__topdiv p {
+        font-size: 15px;
+        font-style: italic;
+    }
+
+        
+    .commitlist__topdiv__input {
+        margin-top: 20px;
+        margin-bottom: 20px;
+        padding: 7px;
+        width: 75%;
+        font-size: 14px;
+        border: 0.4px solid #000;
+        border-radius: 4px;
+    }
+
+
+    table thead {
+        left: 0px;
+        position: absolute;
+        visibility: hidden;
+    }
+    table tr {
+        border-bottom: 0;
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        margin-bottom: 40px;
+    }
+    table td {
+        margin: 0 -1px -1px 0;
+        padding-top: 15px;
+        position: relative;
+        width: 100%;
+    }
+    table td span {
+        display: block;
+    }
+
+    tr:nth-child(even) {
+        background-color: transparent;
+    }
 }

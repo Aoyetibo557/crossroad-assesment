@@ -2,6 +2,7 @@ import React, {useState} from 'react'
 import "./styles.css";
 import { IState as IProps} from "./CommitBoard";
 
+/* A type definition for the props that will be passed into the component. */
 interface commitHistory {
     commit: IProps[];
 }
@@ -9,19 +10,23 @@ interface commitHistory {
 const CommitList: React.FC<commitHistory> = ({commit}) => {
     const [searchinput, setSearchInput] = useState("");
     
+    /**
+     * Return the filtered commits, and map over them to create a table row for each commit.
+     * @returns The filtered commits are being returned.
+     */
     const filteredCommits = () => {
-        return commit.filter(com => com.commit.message.toLocaleLowerCase().includes(searchinput)).map((itm, idx) => (
+        return commit.filter(com => com.commit.message.toLocaleLowerCase().includes(searchinput) ).map((itm, idx) => (
             <tr key={idx}>
                 <td>
                     <img className='commitlist__img' src={itm.author.avatar_url} alt="Profile" />
                 </td>
-                <td>{itm.author.id}</td>
-                <td>{itm.commit.author.name}</td>
-                <td>{itm.commit.author.email}</td>
-                <td>{itm.commit.message}</td>
-                <td>{new Date(itm.commit.author.date).toLocaleDateString()}</td>
+                <td><span> {itm.author.id}</span></td>
+                <td><span> {itm.commit.author.name}</span></td>
+                <td><span> {itm.commit.author.email} </span></td>
+                <td><span> {itm.commit.message}</span></td>
+                <td><span> {new Date(itm.commit.author.date).toLocaleDateString()}</span></td>
                 <td>
-                    <a href={itm.commit.url} rel="noreferrer" target="_blank">View JSON Tree</a>
+                    <span><a href={itm.commit.url} rel="noreferrer" target="_blank">View JSON Tree</a></span>
                 </td>
             </tr>
         ))
@@ -59,6 +64,7 @@ const CommitList: React.FC<commitHistory> = ({commit}) => {
            </thead>
 
             <tbody>
+               {/* Calling the filteredCommits function and returning the filtered commits. */}
                 {filteredCommits()}
             </tbody>
             
