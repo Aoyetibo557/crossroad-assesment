@@ -5,8 +5,21 @@ import "./styles.css";
 
 
 export interface IState {
-    id: number,
-    name: string,
+    author:{
+        id: number, 
+    },
+    committer: {
+        name: string,
+        email: string,
+        date: string,
+    },
+    commit: {
+        author: {
+            name: string
+        },
+        message: string,
+        url: string, 
+    }
 }
 
 
@@ -26,13 +39,7 @@ const CommitBoard = () => {
   return (
     //   BEM naming convention
     <div className='commitboard'>
-        {/* <CommitList commit={commit} /> */}
-
-        {commit.map(itm => (
-            <p>
-                {itm.id}
-            </p>
-        ))}
+        <CommitList commit={commit} />
     </div>
   )
 }

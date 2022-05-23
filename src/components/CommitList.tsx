@@ -2,11 +2,12 @@ import React from 'react'
 import "./styles.css";
 import { IState as IProps} from "./CommitBoard";
 
+interface commitHistory {
+    commit: IProps[];
+}
 
-const CommitList: React.FC<IProps> = () => {
+const CommitList: React.FC<commitHistory> = ({commit}) => {
 
-
-    
   return (
     <div className='commitlist'>
         <table>
@@ -17,13 +18,19 @@ const CommitList: React.FC<IProps> = () => {
                 <th>Date</th>
                 <th>URL</th>
             </tr>
-        </table>
 
-        {/* {commit.map((item, idx) => (
-            <div>
-                {}
-            </div>
-        ))} */}
+            
+            {commit?.map(itm => (
+                <tr>
+                    <td>{itm.author.id}</td>
+                    <td>{itm.commit.author.name}</td>
+                    <td>{itm.commit.message}</td>
+                    <td>{new Date(itm.committer.date).toLocaleString()}</td>
+                    <td>{itm.commit.url}</td>
+                </tr>
+            ))}
+            
+        </table>
     </div>
   )
 }
