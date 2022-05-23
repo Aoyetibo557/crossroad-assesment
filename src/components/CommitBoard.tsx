@@ -7,16 +7,18 @@ import "./styles.css";
 /* An interface that is used to define the shape of the data that is being fetched from the API. */
 export interface IState {
     author:{
-        id: number, 
+        id: number,
+        email:string,
+        avatar_url:string,
     },
     committer: {
         name: string,
-        email: string,
-        date: string,
     },
     commit: {
         author: {
-            name: string
+            name: string,
+            email:string,
+            date: string, 
         },
         message: string,
         url: string, 
