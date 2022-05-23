@@ -6,6 +6,20 @@
   
 }
 
+.app__head {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  height: 70px;
+  background-color: purple;
+}
+
+.app__h4 {
+  font-weight: 600;
+  font-size: 2.3rem;
+  color: #fff;
+}
+
 .App-logo {
   height: 40vmin;
   pointer-events: none;
