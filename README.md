@@ -2,6 +2,16 @@
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
+## Installation of and Running the App
+
+To install the app, you can clone the repo and open in a code editor. Then cd into folder and run "npm start"
+That should load up the project on a localhost that'savailable. This is typescript project keep that in mind.
+
+This project currently works using my profile as a parameter in "CommitBoard.tsx". If you wish to use a diffrent profile. follow the steps below:
+1 go into CommitBoard.tsx and change the static profile on line 29 to your's or another.
+2 Then got to the adapters folder into GetCommits.tsx and on line 18 change "crossroad-assesment" to a repo that you know exist in the profile that you had previouly set in step 1.
+3 Save files and run you should see the details made available in your local browser.
+
 ## Available Scripts
 
 In the project directory, you can run:

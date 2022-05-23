@@ -26,6 +26,8 @@ export interface IState {
     }
 }
 
+const USER_PROFILE ="aoyetibo557";
+
 
 const CommitBoard = () => {
     const [commit, setCommit] = useState<IState[]>([])
@@ -33,8 +35,12 @@ const CommitBoard = () => {
 /* A hook that is used to fetch data from an API. */
     useEffect(() => {
         try{
-           GET_ALL_COMMITS("aoyetibo557").then(data => {
+           /* A promise that is used to fetch data from an API. */
+           GET_ALL_COMMITS(USER_PROFILE).then(data => {
                setCommit(data)
+           }).catch(error => {
+               alert(` ${error.message}. An error occured while retrieveing commit data from`)
+               console.log(error.message, "An error Occured while getting the commits")
            })
            
         }catch(err){
