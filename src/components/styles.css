@@ -7,11 +7,16 @@
 
 .commitlist {
     width: 100%;
+    background-color: #fff;
 }
 
 .commitlist__topdiv {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
     margin: 30px;
-
+    
 }
 
 .commitlist__topdiv h4 {
@@ -21,6 +26,12 @@
 .commitlist__topdiv p {
     font-size: 16px;
     font-style: italic;
+}
+
+.commitlist__topdiv__input {
+    padding: 5px;
+    width: 25vw;
+    font-size: 14px;
 }
 
 .commitlist__img {
@@ -49,6 +60,7 @@ tr:nth-child(even) {
 
 .footer {
     margin-top: 10px;
+    margin-bottom: 10px;
     text-align: center;
 }
 
