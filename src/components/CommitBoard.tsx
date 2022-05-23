@@ -1,6 +1,7 @@
 import React, {useState, useEffect} from 'react'
 import GET_ALL_COMMITS from '../adapters/GetCommits';
 import CommitList from './CommitList';
+import Footer from './Footer';
 import "./styles.css";
 
 
@@ -44,6 +45,7 @@ const CommitBoard = () => {
     //   BEM naming convention
     <div className='commitboard'>
         <CommitList commit={commit} />
+        <Footer />
     </div>
   )
 }

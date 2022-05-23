@@ -46,3 +46,13 @@ td, th {
 tr:nth-child(even) {
   background-color: #dddddd;
 }
+
+.footer {
+    margin-top: 10px;
+    text-align: center;
+}
+
+.footer p{
+    font-size: 14px;
+    font-weight: 400;
+}
